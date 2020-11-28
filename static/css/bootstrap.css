@@ -479,6 +479,11 @@ mark,
 
 .img-fluid {
   max-width: 100%;
+  max-height: auto;
+}
+
+.img-movie-shots {
+  max-width: 250px;
   height: auto;
 }
 
