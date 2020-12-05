@@ -3,8 +3,17 @@ from django.views.generic.base import View
 from django.views.generic import ListView, DetailView
 # Create your views here.
 
-from .models import Movie
+from .models import Movie, Category, Actor, Genre
 from .forms import ReviewForm
+
+class GenreYear:
+	""" Genre and year released """
+	def get_genres(self):
+		return Genre.objects.all()
+
+	def get_years(self):
+		return Movie.objects.filter(draft=True)
+
 
 class MoviesView(ListView):
 	""" List of movies """
@@ -31,3 +40,9 @@ class AddReview(View):
 			form.movie = movie
 			form.save() 
 		return redirect(movie.get_absolute_url())
+
+class ActorView(DetailView):
+	""" Information about actors """
+	model = Actor
+	template_name = "movies/actor.html"
+	slug_field = "name"

@@ -34,13 +34,17 @@
                 <li style="list-style: none">
                     <span><b>Director:</b>
                         {% for director in movie.directors.all %}
-                            {{ director.name }}
+                           <a href="{{ director.get_absolute_url }}">
+                                {{ director.name }}
+                            </a>
                         {% endfor %}
                     </span>
                 </li>
                 <li style="list-style: none"><span><b>Actors:</b>
                     {% for actor in movie.actors.all %}
-                        {{ actor.name }}
+                      <a href="{{ actor.get_absolute_url }}">
+                            {{ actor.name }}
+                        </a>
                     {% endfor %}
                 </span>
                 </li>
@@ -56,7 +60,7 @@
                     <span><b>Budget:</b> ${{ movie.budget }}</span></li>
                 <li style="list-style: none">
                     <span><b>Fees in USA:</b> ${{ movie.fees_in_usa }}</span></li>
-                <li style="list-style: none"><span><b>Fees in the world:</b> ${{ movie.fess_in_world }}</span>
+                <li style="list-style: none"><span><b>Fees in the world:</b> ${{ movie.fees_in_world }}</span>
                 </li>
                 <li style="list-style: none">
                     <a href="#"><b>Rating:</b>

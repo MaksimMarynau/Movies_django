@@ -23,6 +23,9 @@ class Actor(models.Model):
 	description = models.TextField("Description")
 	image = models.ImageField("Image", upload_to="actors/")
 
+	def get_absolute_url(self):
+		return reverse("actor_detail", kwargs={'slug':self.name})
+
 	def __str__(self):
 		return self.name
 
@@ -51,8 +54,8 @@ class Movie(models.Model):
 	poster = models.ImageField("Poster", upload_to="movies/")
 	year = models.PositiveSmallIntegerField("Release year",default=2020)
 	country = models.CharField("Country", max_length=30)
-	directors = models.ManyToManyField(Actor,verbose_name='Directors', related_name='file_director')
-	actors = models.ManyToManyField(Actor, verbose_name='Actors', related_name='file_actor')
+	directors = models.ManyToManyField(Actor,verbose_name='Directors', related_name='film_director')
+	actors = models.ManyToManyField(Actor, verbose_name='Actors', related_name='film_actor')
 	genres = models.ManyToManyField(Genre, verbose_name='Genres')
 	world_premiere = models.DateField("World premiere", default=date.today)
 	budget = models.PositiveSmallIntegerField("Budget", default=0, help_text='Enter price in dollars')
