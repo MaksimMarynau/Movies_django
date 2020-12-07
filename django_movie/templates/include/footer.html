@@ -3,7 +3,7 @@
             <div class="row footer-top">
                 <div class="col-lg-4 footer-grid_section_w3layouts">
                     <h2 class="logo-2 mb-lg-4 mb-3">
-                        <a href="index.html" class="editContent">
+                        <a href="{% url 'main' %}" class="editContent">
                             <span class="fa" aria-hidden="true" >
                                 Movie test blog
                             </span>
@@ -52,13 +52,13 @@
                             <h3 class="footer-title text-uppercase editContent mb-lg-4 mb-3" >Sections</h3>
                             <ul class="list-unstyled w3layouts-icons">
                                 <li>
-                                    <a href="index.html" class="editContent" >Main</a>
+                                    <a href="{% url 'main' %}" class="editContent" >Main</a>
                                 </li>
                                 <li>
                                     <a href="about.html" class="editContent" >Categories</a>
                                 </li>
                                 <li>
-                                    <a href="contact.html" class="editContent" >Contacts</a>
+                                    <a href="{% url 'contacts' %}" class="editContent" >Contacts</a>
                                 </li>
                             </ul>
                         </div>
@@ -69,19 +69,7 @@
                                 <ul class="list-unstyled w3layouts-icons">
 
                                     <li>
-                                        <a href="#" class="editContent" >About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="editContent" >About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="editContent" >About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="editContent" >About Us</a>
-                                    </li>
-                                    <li>
-                                        <a href="#" class="editContent" >About Us</a>
+                                        <a href="{% url 'about' %}" class="editContent" >About Us</a>
                                     </li>
                                 </ul>
                             </div>
