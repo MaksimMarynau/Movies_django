@@ -109,7 +109,6 @@ nav {
 }
 
 
-
 /* Since we'll have the "ul li" "float:left"
  * we need to add a clear after the container. */
 
@@ -383,7 +382,7 @@ li > a:only-child:after {
 /*--/banner --*/
 
 .main-banner {
-    background: url(../images/banner.jpg)no-repeat center;
+    background: url(../images/banner.jpg) no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -394,7 +393,7 @@ li > a:only-child:after {
 }
 
 .main-banner.inner {
-    background: url(../images/banner.jpg)no-repeat center;
+    background: url(../images/banner.jpg) no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -659,6 +658,44 @@ span.product-new-top {
     color: #fff;
 }
 
+/*-- //Checkbox stars --*/
+.rating {
+    overflow: hidden;
+    vertical-align: bottom;
+    display: inline-block;
+    width: 155px;
+    height: 30px;
+}
+
+.rating > input {
+    opacity: 0;
+    margin-right: -100%;
+}
+
+.rating > label {
+    position: relative;
+    display: block;
+    float: right;
+    background: url('../images/star-off-big.png');
+    background-size: 30px 30px;
+}
+
+.rating > label:before {
+    display: block;
+    opacity: 0;
+    content: '';
+    width: 30px;
+    height: 30px;
+    background: url('../images/star-on-big.png');
+    background-size: 30px 30px;
+    transition: opacity 0.2s linear;
+}
+
+
+.rating > label:hover:before, .rating > label:hover ~ label:before,
+.rating:not(:hover) > :checked ~ ~ label:before { opacity: 1; }
+
+/*-- //Checkbox stars --*/
 /*-- //New-Arrivals --*/
 
 section#brands {
@@ -849,7 +886,7 @@ ul.w3layouts-box-list li {
 }
 
 .grid-img-right {
-    background: url(../single.jpg)no-repeat center;
+    background: url(../single.jpg) no-repeat center;
     -webkit-background-size: cover;
     -moz-background-size: cover;
     -o-background-size: cover;
@@ -1246,7 +1283,7 @@ a.move-top span {
 
 /*-- //to-top --*/
 
-@media(max-width:1366px) {
+@media (max-width: 1366px) {
     .main-banner {
         min-height: 45em;
     }
