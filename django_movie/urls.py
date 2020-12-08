@@ -25,6 +25,7 @@ urlpatterns = [
     # path('pages/', include('django.contrib.flatpages.urls')),
     path('about/', views.flatpage, {'url': '/about/'}, name='about'),
     path('contacts/', views.flatpage, {'url': '/contacts/'}, name='contacts'),
+    path('contact/', include('contact.urls')),
     path('', include('movies.urls')),
 ]
 

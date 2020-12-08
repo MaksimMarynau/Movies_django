@@ -12,10 +12,10 @@ from .forms import ReviewForm, RatingForm
 class GenreYear:
 	""" Genre and year released """
 	def get_genres(self):
-		return Genre.objects.all()
+		return Genre.objects.all().order_by("name")
 
 	def get_years(self):
-		return Movie.objects.filter(draft=False).values("year")
+		return Movie.objects.filter(draft=False).order_by("year").values("year")
 
 
 class MoviesView(GenreYear, ListView):
