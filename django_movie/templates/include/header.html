@@ -23,7 +23,15 @@
                         {% endfor %}
                     </ul>
                 </li>
-                <li><a href="contact.html" style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">Sign in</a></li>
+                <li>
+                {% if user.is_authenticated %}
+                    <span style="color: rgb(255,255,255);"><em>{{ user.username }}</em></span>
+                    <a href="{% url 'account_logout' %}" style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">Sign out </a>
+                {% else %}
+                    <a href="{% url 'account_login' %}" style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">Sign in </a>
+                    <a href="{% url 'account_signup' %}" style="color: rgb(255, 255, 255); font-weight: 700; text-transform: uppercase;">Registration </a>
+                {% endif %}
+               </li>
             </ul>
         </nav>
         <!-- //nav -->

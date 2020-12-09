@@ -21,13 +21,19 @@ from django.contrib.flatpages import views
 
 urlpatterns = [
     path('admin/', admin.site.urls),
+    path('accounts/', include('allauth.urls')),
     path('ckeditor/', include('ckeditor_uploader.urls')),
-    # path('pages/', include('django.contrib.flatpages.urls')),
     path('about/', views.flatpage, {'url': '/about/'}, name='about'),
     path('contacts/', views.flatpage, {'url': '/contacts/'}, name='contacts'),
     path('contact/', include('contact.urls')),
     path('', include('movies.urls')),
+    # path('i18n/', include('django.conf.urls.i18n')),
 ]
+    # path('pages/', include('django.contrib.flatpages.urls')),
+# urlpatterns += i18n_patterns(
+  
+# )
+
 
 if settings.DEBUG:
 	urlpatterns += static(settings.MEDIA_URL, document_root=settings.MEDIA_ROOT)
